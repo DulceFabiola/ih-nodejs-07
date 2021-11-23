@@ -2,19 +2,16 @@
 //Establecer importaciones
 const mongoose = require("mongoose");
 const Book = require("./../models/Book");
-
+require("dotenv").config();
 console.log(Book);
 //2.CONEXION A BD
 //Conexion a base de datos
-mongoose.connect(
-  "mongodb+srv://DulceFabiola:holaMundo1@cluster0.o0bxr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ih-nodejs-06",
-  {
-    //permite utilizar el ultimo formato  nuevo de mongoDB
-    useNewUrlParser: true,
-    //vocabulario de mongoose
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI, {
+  //permite utilizar el ultimo formato  nuevo de mongoDB
+  useNewUrlParser: true,
+  //vocabulario de mongoose
+  useUnifiedTopology: true,
+});
 //3. LOS DATOS QUE QUIERES POBLAR
 const books = [
   {
