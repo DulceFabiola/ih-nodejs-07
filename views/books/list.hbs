@@ -1,0 +1,15 @@
+<h1>Listado de Libros</h1>
+<a href="/books/create">Crear Libro</a>
+<ul>
+  {{#each data}}
+    <li>
+      <h1>{{this.title}}</h1>
+      <a href="/books/{{this._id}}">Ver detalles</a>
+      <a href="/books/{{this._id}}/edit">Editar</a>
+      {{! button de birrado en hbs hay q anclarlo a un form }}
+      <form method="POST" action="/books/{{this._id}}/delete">
+        <button>Borrar</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
