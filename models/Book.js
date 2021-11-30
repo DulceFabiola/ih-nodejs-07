@@ -1,5 +1,4 @@
 //1. IMPORTACIONES
-
 const mongoose = require("mongoose");
 
 //2.SCHEMA
